@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SafeWalk | AI-Powered Smart Personal Safety Platform</title>
+  <title>SafeWalk | Smart Personal Safety App</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -231,7 +231,7 @@
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Geoapify Pedestrian Routing</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Provides real walking directions optimized for pedestrian pathways, avoidance of unlit areas, and precise waypoint navigation.
+              Provides real walking directions using Geoapify routing with precise start and destination coordinates.
             </p>
           </div>
 
@@ -242,7 +242,7 @@
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Safe-Place Discovery</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Instantly detects nearby police stations, 24/7 hospitals, open shops, petrol pumps, railway hubs, and security posts within a 5km radius.
+              Finds nearby police stations, hospitals, petrol pumps, railway stations, shops, banks/ATMs and schools within a 5km search radius.
             </p>
           </div>
 
@@ -253,7 +253,7 @@
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Gemini AI Safety Assistant</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Real-time conversational safety companion trained to analyze user distress, provide survival guidance, and query local emergency numbers.
+              A conversational AI assistant that provides practical safety guidance and responds to safety-related questions.
             </p>
           </div>
 
@@ -264,7 +264,7 @@
             </div>
             <h3 class="text-lg font-bold text-white mb-2">10-Second Auto-SOS Countdown</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Smart safety timer triggers loud alarms and broadcasts GPS coordinates to trusted contacts unless deactivated with a PIN or tap.
+              A 10-second safety countdown gives the user time to cancel an SOS before the emergency flow is triggered.
             </p>
           </div>
 
@@ -275,7 +275,7 @@
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Firebase Sync & Emergency Logs</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Powered by Firebase Realtime Database and Auth for sub-second synchronization of emergency distress signals and safety contacts.
+              Uses Firebase Authentication and Realtime Database for user authentication and emergency-related app data.
             </p>
           </div>
 
@@ -286,7 +286,7 @@
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Automated Dynamic Rerouting</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              If a user strays into off-grid zones or hits SOS, SafeWalk automatically calculates a fresh walking route straight to the closest verified refuge point.
+              Users can select a nearby safe place and SafeWalk calculates a fresh walking route to that destination.
             </p>
           </div>
 
@@ -316,7 +316,7 @@
             <span class="text-4xl font-black text-brand-500/20 absolute top-4 right-4">02</span>
             <div class="w-10 h-10 rounded-lg bg-brand-500 text-slate-950 font-bold flex items-center justify-center mb-4">2</div>
             <h4 class="text-base font-bold text-white mb-2">Live Route & AI Watch</h4>
-            <p class="text-xs text-slate-400">Walking navigation renders. Gemini AI continuously evaluates route safety status and offers tips.</p>
+            <p class="text-xs text-slate-400">Walking navigation renders, while the Gemini AI assistant provides safety guidance when the user asks for help.</p>
           </div>
 
           <!-- Step 3 -->
@@ -332,7 +332,7 @@
             <span class="text-4xl font-black text-brand-500/20 absolute top-4 right-4">04</span>
             <div class="w-10 h-10 rounded-lg bg-red-500 text-white font-bold flex items-center justify-center mb-4">4</div>
             <h4 class="text-base font-bold text-white mb-2">SOS Broadcast Sync</h4>
-            <p class="text-xs text-slate-400">If uncancelled, emergency state writes to Firebase Realtime DB, alerting family and response logs.</p>
+            <p class="text-xs text-slate-400">If uncancelled, the emergency flow can write the SOS state to Firebase Realtime Database.</p>
           </div>
         </div>
       </div>
@@ -348,29 +348,29 @@
             <div>
               <span class="text-xs font-bold uppercase tracking-widest text-brand-400">Live GIS Integration</span>
               <h2 class="text-3xl font-extrabold text-white mt-1">Safe-Place Discovery Feature</h2>
-              <p class="text-slate-400 text-sm mt-2">See how SafeWalk queries Geoapify Places API to locate surrounding safe zones in real time.</p>
+              <p class="text-slate-400 text-sm mt-2">Explore the safe-place categories supported by the SafeWalk app.</p>
             </div>
 
             <!-- Categories Buttons -->
             <div class="space-y-2">
               <label class="text-xs font-semibold text-slate-400">Select Safe Category:</label>
               <div class="grid grid-cols-2 gap-2" id="category-buttons">
-                <button onclick="selectSafeCategory('police', 'Police Station', 19.0760, 72.8777)" class="cat-btn active bg-brand-500 text-slate-950 font-bold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
+                <button onclick="selectSafeCategory(this, 'Police Station', 19.0760, 72.8777)" class="cat-btn active bg-brand-500 text-slate-950 font-bold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
                   <i class="fa-solid fa-building-shield"></i> Police Station
                 </button>
-                <button onclick="selectSafeCategory('hospital', 'Emergency Hospital', 19.0820, 72.8820)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
+                <button onclick="selectSafeCategory(this, 'Emergency Hospital', 19.0820, 72.8820)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
                   <i class="fa-solid fa-hospital"></i> Hospital 24/7
                 </button>
-                <button onclick="selectSafeCategory('petrol', 'Petrol Pump / Fuel Station', 19.0720, 72.8710)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
+                <button onclick="selectSafeCategory(this, 'Petrol Pump / Fuel Station', 19.0720, 72.8710)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
                   <i class="fa-solid fa-gas-pump"></i> Petrol Pump
                 </button>
-                <button onclick="selectSafeCategory('railway', 'Central Railway Hub', 19.0850, 72.8690)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
+                <button onclick="selectSafeCategory(this, 'Railway Station', 19.0850, 72.8690)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
                   <i class="fa-solid fa-train"></i> Railway Station
                 </button>
-                <button onclick="selectSafeCategory('shop', '24/7 Convenience Store', 19.0780, 72.8850)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
+                <button onclick="selectSafeCategory(this, 'Open Shop', 19.0780, 72.8850)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
                   <i class="fa-solid fa-store"></i> Open Shop
                 </button>
-                <button onclick="selectSafeCategory('bank', 'Secured Bank / ATM', 19.0710, 72.8800)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
+                <button onclick="selectSafeCategory(this, 'Bank / ATM', 19.0710, 72.8800)" class="cat-btn bg-dark-card hover:bg-dark-hover border border-dark-border text-slate-300 font-semibold p-3 rounded-xl text-xs flex items-center gap-2 transition-all">
                   <i class="fa-solid fa-vault"></i> Bank / ATM
                 </button>
               </div>
@@ -391,8 +391,8 @@
           <div class="lg:col-span-7">
             <div class="bg-dark-card p-3 rounded-2xl border border-dark-border shadow-xl">
               <div class="flex justify-between items-center px-2 py-1 mb-2 text-xs text-slate-400">
-                <span class="font-bold text-white flex items-center gap-1.5"><i class="fa-solid fa-map text-brand-400"></i> Interactive Safe Destination Preview</span>
-                <span class="bg-brand-500/20 text-brand-400 px-2 py-0.5 rounded text-[10px] font-bold">API READY</span>
+                <span class="font-bold text-white flex items-center gap-1.5"><i class="fa-solid fa-map text-brand-400"></i> Safe Destination Preview</span>
+                <span class="bg-brand-500/20 text-brand-400 px-2 py-0.5 rounded text-[10px] font-bold">DEMO PREVIEW</span>
               </div>
               <div id="map"></div>
             </div>
@@ -411,17 +411,17 @@
             <span class="text-xs font-bold uppercase tracking-widest text-brand-400">Intelligence Layer</span>
             <h2 class="text-3xl font-extrabold text-white">Gemini AI Safety Assistant</h2>
             <p class="text-slate-400 text-sm leading-relaxed">
-              SafeWalk integrates Google's Gemini API directly into the mobile chat router (`routes/chat.py`). It acts as a calm, intelligent companion that provides situational advice, safe route verification, and immediate de-escalation tips.
+              SafeWalk integrates Google's Gemini API through the FastAPI chat backend to provide a conversational safety assistant and practical safety guidance.
             </p>
 
             <div class="space-y-3 pt-2">
               <div class="flex items-start gap-3 text-xs text-slate-300">
                 <div class="w-6 h-6 rounded bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></div>
-                <span>Analyzes natural language safety concerns in real time.</span>
+                <span>Responds to natural-language safety questions.</span>
               </div>
               <div class="flex items-start gap-3 text-xs text-slate-300">
                 <div class="w-6 h-6 rounded bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></div>
-                <span>Provides immediate instructions to trigger Safe-Place rerouting.</span>
+                <span>Can suggest practical next steps and nearby safe-place options.</span>
               </div>
             </div>
           </div>
@@ -437,11 +437,11 @@
                     <i class="fa-solid fa-robot"></i>
                   </div>
                   <div>
-                    <h3 class="text-sm font-bold text-white">SafeWalk Gemini AI Demo</h3>
-                    <p class="text-[10px] text-brand-400">Online | FastAPI Chat Router</p>
+                    <h3 class="text-sm font-bold text-white">SafeWalk AI Demo</h3>
+                    <p class="text-[10px] text-brand-400">Interactive website demo</p>
                   </div>
                 </div>
-                <span class="text-[10px] bg-dark-surface border border-dark-border px-2 py-1 rounded text-slate-400 font-mono">model: gemini-1.5-flash</span>
+                <span class="text-[10px] bg-dark-surface border border-dark-border px-2 py-1 rounded text-slate-400 font-mono">Gemini AI</span>
               </div>
 
               <!-- Chat Message Area -->
@@ -475,7 +475,7 @@
         <div class="max-w-3xl mx-auto text-center mb-12">
           <span class="text-xs font-bold uppercase tracking-widest text-red-400">Fail-Safe Protocol</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">10-Second Auto SOS Alert System</h2>
-          <p class="text-slate-400 text-sm mt-2">Test the emergency countdown protocol. If not cancelled, an SOS payload writes directly to Firebase Realtime DB and alerts emergency contacts.</p>
+          <p class="text-slate-400 text-sm mt-2">Try the 10-second emergency countdown demo. The live mobile app contains the actual emergency flow.</p>
         </div>
 
         <div class="max-w-xl mx-auto bg-dark-card p-8 rounded-3xl border border-red-500/30 shadow-2xl text-center relative overflow-hidden">
@@ -541,7 +541,7 @@
                 <p class="text-xs text-slate-400">Onto High Street toward Police Station</p>
               </div>
               <div class="bg-brand-500/10 p-2 rounded-xl text-[10px] text-brand-300 text-center">
-                Geoapify Route Clean & Lighted
+                Geoapify Walking Route
               </div>
             </div>
             <h4 class="text-center font-bold text-white text-sm">Real Walking Maps</h4>
@@ -559,7 +559,7 @@
                   "Is the railway station open right now?"
                 </div>
                 <div class="bg-brand-500/20 p-2.5 rounded-xl text-brand-200">
-                  "Yes, Central Railway is open 24/7 with active security staff."
+                  "For real-time availability, verify the location directly before relying on it."
                 </div>
               </div>
               <div class="bg-dark-surface p-2 rounded-xl text-[10px] text-slate-400 text-center border border-dark-border">
@@ -604,10 +604,10 @@
           <i class="fa-solid fa-mobile-screen-button"></i>
         </div>
         <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">Your Personal Safety Guard in Your Pocket</h2>
-        <p class="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg">Download the SafeWalk Android app APK or build directly using React Native and Expo.</p>
+        <p class="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg">Download the SafeWalk Android app or explore the React Native / Expo project.</p>
         
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <button onclick="alert('Download link initiated. Place your app-release.apk file path here!')" class="bg-brand-500 hover:bg-brand-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-base flex items-center gap-3 shadow-xl glow-green transition-all hover:scale-105">
+          <a href="APP_DOWNLOAD_LINK" target="_blank" rel="noopener" class="bg-brand-500 hover:bg-brand-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-base flex items-center gap-3 shadow-xl glow-green transition-all hover:scale-105">
             <i class="fa-brands fa-google-play text-2xl"></i>
             <div class="text-left leading-tight">
               <span class="block text-[10px] uppercase tracking-wider font-semibold">Download Direct</span>
@@ -615,7 +615,7 @@
             </div>
           </button>
 
-          <button onclick="alert('Expo project build instruction: Run `npx expo start` in your project folder.')" class="bg-dark-card hover:bg-dark-hover border border-dark-border text-white font-bold px-8 py-4 rounded-2xl text-base flex items-center gap-3 transition-all">
+          <a href="#app-preview" class="bg-dark-card hover:bg-dark-hover border border-dark-border text-white font-bold px-8 py-4 rounded-2xl text-base flex items-center gap-3 transition-all">
             <i class="fa-solid fa-code text-brand-400 text-xl"></i>
             <div class="text-left leading-tight">
               <span class="block text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Source Code</span>
@@ -634,7 +634,7 @@
             <i class="fa-solid fa-shield-halved"></i>
           </div>
           <span class="text-slate-300 font-bold text-sm">SafeWalk</span>
-          <span>© SafeWalk Personal Safety Platform. All rights reserved.</span>
+          <span>© SafeWalk Personal Safety App. Built for demonstration and project showcase.</span>
         </div>
         <div class="flex items-center gap-6">
           <span>FastAPI</span>
@@ -649,7 +649,8 @@
 
   <!-- ==================== JAVASCRIPT LOGIC ==================== -->
   <script>
-    /* 1. LEAFLET MAP SIMULATION */
+    // Replace APP_DOWNLOAD_LINK in the HTML with your real APK/download URL.
+    /* 1. LEAFLET MAP DEMO */
     let map, marker;
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -660,19 +661,19 @@
       }).addTo(map);
 
       marker = L.marker([19.0760, 72.8777]).addTo(map)
-        .bindPopup('<b>Safe Place: Police Station</b><br>Geoapify Rerouted Destination')
+        .bindPopup('<b>Safe Place: Police Station</b><br>Example Safe Place')
         .openPopup();
     });
 
-    function selectSafeCategory(catKey, name, lat, lng) {
+    function selectSafeCategory(button, name, lat, lng) {
       const buttons = document.querySelectorAll('#category-buttons button');
       buttons.forEach(btn => {
         btn.classList.remove('bg-brand-500', 'text-slate-950', 'font-bold');
         btn.classList.add('bg-dark-card', 'text-slate-300');
       });
 
-      event.currentTarget.classList.remove('bg-dark-card', 'text-slate-300');
-      event.currentTarget.classList.add('bg-brand-500', 'text-slate-950', 'font-bold');
+      button.classList.remove('bg-dark-card', 'text-slate-300');
+      button.classList.add('bg-brand-500', 'text-slate-950', 'font-bold');
 
       document.getElementById('selected-place-name').innerText = `Selected: ${name}`;
       document.getElementById('selected-coords').innerText = `Coordinates: ${lat}° N, ${lng}° E`;
@@ -707,12 +708,12 @@
       chatBox.scrollTop = chatBox.scrollHeight;
 
       setTimeout(() => {
-        let aiReply = "I am keeping track of your path. Walk on lit main streets and head toward the nearest open store or police station if you feel uneasy.";
+        let aiReply = "Stay aware of your surroundings and move toward a busy, well-lit public place if you feel unsafe.";
         
         if (text.toLowerCase().includes("dark") || text.toLowerCase().includes("alone")) {
-          aiReply = "Stay vigilant. Keep your phone in hand and walk toward main avenues. I am keeping your location ready for SOS broadcast if needed.";
+          aiReply = "Stay aware of your surroundings and move toward a busy, well-lit public place. If you are in immediate danger, use the SOS feature in the SafeWalk app.";
         } else if (text.toLowerCase().includes("police")) {
-          aiReply = "Querying Geoapify... Nearest Police Station is within 400 meters. Tap 'Police Station' on the map above to view the location.";
+          aiReply = "In the SafeWalk app, you can use the Police Station safe-place option to find a nearby location and reroute there.";
         }
 
         const aiMsgHtml = `
@@ -758,7 +759,7 @@
 
         if (secondsLeft <= 0) {
           clearInterval(sosTimer);
-          alert("SOS BROADCAST TRIGGERED! In the mobile app, this writes distress data directly to Firebase Realtime DB.");
+          alert("SOS demo completed. The live SafeWalk mobile app contains the actual emergency flow.");
           cancelSosTimer();
         }
       }, 1000);
